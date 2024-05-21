@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        background-color: rgb(59, 31, 74);
+    }
+    h1{
+        margin-bottom: 50px;
+        color: white;
+        letter-spacing: 5px;
+    }
+    h2{
+        color: white;
+    }
+    #truth{
+        background-color: rgb(54, 54, 255);
+        padding: 10px 15px;
+    }
+    #dare{
+        background-color: rgb(255, 70, 70);
+        padding: 10px 15px;
+    }
+    #truthButton{
+        background-color: blue;
+        font-size: 1.5rem;
+        padding:20px 30px;
+        border: none;
+        letter-spacing: 5px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    #dareButton{
+        background-color: red;
+        font-size: 1.5rem;
+        padding:20px 30px;
+        border: none;
+        letter-spacing: 5px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    #text-center{
+        margin-bottom: 50px;
+    }
+    #result{
+        color: black;
+        background-color: white;
+        padding:10px 15px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        width:450px
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>
+            <span id="truth">Truth</span> or <span id="dare">Dare</span> Game 
+        </h1>
+        <h2>
+            Choose:
+        </h2>
+    <div id="text-center">
+        <button onclick="" id="truthButton">Truth</button>
+        <button onclick="" id="dareButton">Dare</button>
+    </div>
+        <div id="result"></div>
+    </div>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+const truths = [
+    "What is your biggest what if?",
+    "Naranasan mo na bang magmahal at hindi ka minahal pabalik?",
+    "Naexperience mo na ba mag twerk for 25 minutes straight?",
+    "Ano ang mga pogi problems mo?"
+]
+const dares = [
+    "Twerk 25 minutes a day",
+    "Woah non stop",
+    "Rizz me up. So I can stand on mountains",
+    "Gumawa at kumanta ng sariling version ng boomtarat tarat"
+]
+
+document.getElementById("truthButton").addEventListener("click", function(){
+const randomTruths = truths[Math.floor(Math.random()*truths.length)];
+document.getElementById("result").innerText = randomTruths;
+})
+
+document.getElementById("dareButton").addEventListener("click", function(){
+const randomDares = dares[Math.floor(Math.random() * dares.length)];
+document.getElementById("result").innerText = randomDares;
+})
+
+}
+)
+
+</script>
+
+</html>
